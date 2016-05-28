@@ -59,3 +59,13 @@ Numbered list:
   3. pears
 
 A [link](http://example.com).
+
+```javascript
+function {
+  //Javascript highlighted code block.
+}
+```
+
+    {
+    Code block without highlighting.
+    }
