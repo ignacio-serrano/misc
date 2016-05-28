@@ -6,23 +6,27 @@ General purpose storage
 
 Below, a Git cheatsheet.
 
-git clone https://github.com/ignacio-serrano/misc.git
+    git clone https://github.com/ignacio-serrano/misc.git
 
 Clones this repository in current directory.
 
-git status
+    git status
 
 Tells what has changed in current working tree.
 
-git add .
+    git add .
 
 Adds all working tree changes in current directory to the _stage_
 
-git commit -m "«Your commit message here»".
+    git commit -m "«Your commit message here»"
 
 Takes all changes in the _stage_ and makes a commit out of them.
 
-git push
+    git commit -a -m "«Your commit message here»"
+
+`git add .` and `git commit -m` combined in a single command.
+
+    git push
 
 Sends all commits from local repository to remote repositories.
 
