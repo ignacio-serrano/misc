@@ -1,0 +1,8 @@
+In this directory you should put everything needed to build your image. 
+Everthing, but nothing more. Before building, the whole content of directory 
+containing the Dockerfile is sent to the Docker daemon, so the less you have
+in it, the less time consumed sending it.
+Aside from Dockerfile, any directories and files used in ADD operations must be
+in this directory. It's also advisable to keep here the script that compresses
+not binded volumes for backup. It can be included in the image at build time or
+copied by «docker cp».

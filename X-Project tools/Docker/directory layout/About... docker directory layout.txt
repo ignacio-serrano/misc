@@ -1,0 +1,13 @@
+I've found this layout to be usefull. In this directory you will find a set of 
+scripts wich are shortcuts to my top 5 docker commands (all targeted to the 
+same image and container name). Also an empty file named after the container 
+to enable autocomplete when manually typing other commands.
+
+Here, there are also 3 subdirectories:
+- volumes: directory where host binded volumes of the container live.
+- backups: directory where backup script should store backups of not binded 
+volumes.
+- image: it contains just the necessary to build the image (Dockerfile and ADD
+stuff).
+
+More info in the "About..." of every directory.
