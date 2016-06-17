@@ -3,8 +3,6 @@ misc
 General purpose storage
 
 ---
-Probando probando 1,2,3
-
 
 Below, a Git cheatsheet.
 
