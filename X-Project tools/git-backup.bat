@@ -80,6 +80,9 @@ FOR /F "usebackq eol=# tokens=* delims=ª" %%i IN ("%installDir%\git-backup.white
 	CALL :doCopy "%%i"
 )
 
+:: Resets variable "answer". Otherwise, previous value would stay if user just 
+:: presses ENTER
+SET answer=
 SET /P answer=Commit changes? [y/N]:
 IF /I NOT "%answer%" == "y" (
 	ECHO Backup finished.
@@ -89,6 +92,9 @@ IF /I NOT "%answer%" == "y" (
 git add .
 git commit -a -m "Periodic backup of files."
 
+:: Resets variable "answer". Otherwise, previous value would stay if user just 
+:: presses ENTER
+SET answer=
 SET /P answer=Push changes? [y/N]:
 IF /I NOT "%answer%" == "y" (
 	ECHO Backup finished.
