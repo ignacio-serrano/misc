@@ -5,9 +5,9 @@ A collection of heterogeneous tools to support and speed up development tasks.
 TODO:
 -----
 
-  * Develop git-backup.bat
-    * [[DONE]] Add an "Are you sure..." warning before doing any change.
-    * Add verification of git being installed.
+  * \[DONE\] Develop git-backup.bat
+    * \[DONE\] Add an "Are you sure..." warning before doing any change.
+    * \[DONE\] Add verification of git being installed.
   * Extract a subroutine to dump the output of a command to a variable.
 
 ---
