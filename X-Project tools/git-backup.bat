@@ -7,7 +7,7 @@
 :: USAGE:
 ::    git-backup.bat
 ::
-:: DEPENDENCIES: :findOutInstall :loadProperties :extractDrive
+:: DEPENDENCIES: :findOutInstall :loadProperties :validateProgramAvailable
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 @ECHO OFF
 SETLOCAL EnableDelayedExpansion
@@ -23,6 +23,13 @@ REM 	GOTO :exit
 REM )
 CALL :findOutInstall "%~0" installDir
 CALL :loadProperties "%installDir%\git-backup.properties"
+
+CALL :validateProgramAvailable git.exe
+SET errLvl=%ERRORLEVEL%
+IF %errLvl% GTR 0 (
+	GOTO :exit
+)
+
 
 :::::::::::::::::::::::::::::::::::: PROCESS :::::::::::::::::::::::::::::::::::
 :: Counts localGitRepository properties.
@@ -242,5 +249,32 @@ FOR /F "usebackq eol=# tokens=1 delims=ª" %%i IN ("%~1") DO (
 EXIT /B 0
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 :: END: SUBROUTINE ®loadProperties¯
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+:: BEGINNING: SUBROUTINE ®validateProgramAvailable¯
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+::    Verifies whether an executable file is present in PATH environment 
+:: variable.
+::
+:: USAGE: 
+::    CALL :validateProgramAvailable ®["]program["]¯
+:: WHERE...
+::    ®["]program["]¯: Name of the executable file. If the file name contains 
+::                     white spaces, it must be enclosed in double quotes. It 
+::                     is optional otherwise.
+::
+:: DEPENDENCIES: NONE
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+:validateProgramAvailable
+SETLOCAL
+SET errLvl=0
+IF "%~$PATH:1" == "" (
+	ECHO ERROR: Program ®%1¯ cannot be found in PATH. git-backup requires a ®%1¯ installation to work.
+	SET errLvl=1
+)
+ENDLOCAL & EXIT /B %errLvl%
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+:: END: SUBROUTINE ®validateProgramAvailable¯
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 ::]]></contenido>
