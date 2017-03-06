@@ -1,0 +1,12 @@
+# This file must be encoded with the same codepage than CMD uses (usually Cp850).
+# Below, the new line separated list of directories and files to copy from this
+# directory to the chosen local git repository.
+BAT
+Docker
+Node.js
+Visio
+git-backup.bat
+git-backup.properties
+git-backup.whitelist
+README.md
+rubbish
