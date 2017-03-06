@@ -3,6 +3,20 @@
 # directory to the chosen local git repository.
 BAT
 Docker
+Excel\Bower Cheatsheet.xlsx
+Excel\Docker Command Line Builder.xlsx
+Excel\Git Cheatsheet.xlsx
+# Commented out because without example data these sheets are pretty much 
+# useless. And I can't keep example data because it's slightly sensible.
+#Excel\Java Source generators.xlsx
+#Excel\Jira QL generators.xlsx
+#Excel\JSON and REST utils.xlsx
+Excel\keytool and openssl Cheatsheet.xlsx
+Excel\Maven Cheatsheet.xlsx
+Excel\Node.js Cheatsheet.xlsx
+Excel\Randomizer.xlsx
+Excel\Sheet Snippets.xlsx
+Excel\Un pu¤ado de ayudas excel.xls
 Node.js
 Visio
 git-backup.bat
