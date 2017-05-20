@@ -70,7 +70,7 @@ IF "%var[1]%" NEQ "Your branch is up-to-date with 'origin/master'." (
 	GOTO :exit
 )
 
-IF "%var[2]%" NEQ "nothing to commit, working tree clean" (
+IF "%var[2]%" NEQ "nothing to commit, working directory clean" (
 	ECHO ERROR: Target local repository "%chosenLocalGitRepository%" working directory not clean.
 	SET errLvl=1
 	GOTO :exit
